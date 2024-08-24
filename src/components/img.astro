@@ -1,0 +1,16 @@
+---
+import axios from 'axios';
+
+const URL = 'https://backend-aanddark.onrender.com/api/random';
+let imgUrl = '';
+
+try {
+    const response = await axios.get(URL);
+    imgUrl = response.data.URL;
+} catch (error) {
+    console.error('Error fetching the image URL:', error);
+}
+---
+<div class="flex justify-end ">
+<img  class="rounded-full" src={imgUrl} width="20px" height="40px" alt="Random Image" />
+</div>

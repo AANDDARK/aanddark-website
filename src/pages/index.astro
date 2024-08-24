@@ -1,23 +1,33 @@
 ---
 import '@/styles/globals.css';
----
+import InfoCard from '@/components/infoCard.astro';
 
+---
+<head>
+  <meta charset="utf-8" />
+</head>
 <video autoplay muted loop id="myVideo">
-	<source src="/chainsaw-man-girls-moewalls-com.mp4" type="video/mp4">
-  </video>
-  <div class="flex items-center justify-center min-h-screen">
+  <source src="/chainsaw-man-girls-moewalls-com.mp4" type="video/mp4">
+</video>
+
+<div class="flex items-center justify-center min-h-screen">
   <button class="border-2 bg-gray-950 text-zinc-400 font-bold py-2 px-6 rounded hover:bg-neutral-950 hover:text-indigo-900">
     info
   </button>
 </div>
-    <style>
-      /* Make the video cover the entire viewport */
-      #myVideo {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-        z-index: -1; /* Put the video behind other content */
-      }
-    </style>
+
+<div>
+  <InfoCard />
+</div>
+
+<style>
+  /* Make the video cover the entire viewport */
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Put the video behind other content */
+  }
+</style>
