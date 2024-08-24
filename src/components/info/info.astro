@@ -1,0 +1,21 @@
+---
+import DropInfo from '@/components/info/dropInfo.astro'
+---
+
+<h1>Про мене</h1>
+<ul>
+    <li x-data="{ open: false, toggle() { this.open = ! this.open } }">
+        <button @click="toggle()" class="none"><h2>IT та програмування</h2></button>
+        <div x-show="open">
+            <DropInfo />
+        </div>
+    </li>
+    <li>
+        <h2>Інфа про життя та вобще хто я такий</h2>
+    </li>
+</ul>
+<style>
+    .none{
+        background:none; border:none; 
+    }
+</style>

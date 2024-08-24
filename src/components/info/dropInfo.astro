@@ -1,0 +1,25 @@
+---
+import React from "./subinfo/react.astro"
+import Vue from "@/components/info/subinfo/vue.astro"
+import Angular from "@/components/info/subinfo/angular.astro"
+import OtherInfo from "./subinfo/otherInfo.astro"
+---
+
+<ul>
+    <li x-data="{ openR: false, toggle() { this.openR = ! this.openR } }" >
+        <button @click="toggle()"><h1>React</h1></button>
+        <div x-show="openR"><React /></div>
+    </li>
+    <li x-data="{openV: false, clickV() {this.openV = ! this.openV} }">
+        <button @click="clickV()"><h1>Vue</h1></button>
+        <div x-show="openV"><Vue /></div>
+    </li>
+    <li x-data="{openA: false, clickA(){this.openA = ! this.openA}}">
+        <button @click="clickA()"><h1>Angular</h1></button>
+        <div x-show="openA"><Angular /></div>
+    </li>
+    <li x-data="{openO: false, clickO(){this.openO = ! this.openO}}">
+        <button @click="clickO"><h1>Інші технології</h1></button>
+        <div x-show="openO"><OtherInfo /></div>
+    </li>
+</ul>
