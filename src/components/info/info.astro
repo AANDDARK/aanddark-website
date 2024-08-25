@@ -1,21 +1,32 @@
 ---
-import DropInfo from '@/components/info/dropInfo.astro'
+import DropInfo from '@/components/info/dropInfo.astro';
+import DropInfoMe from './dropInfoMe.astro';
 ---
+<head>
+    <script defer src="./public/scripts/globalState.js"></script> 
+</head>
+<div>
+    <div class="flex container">
+        <h1>Про мене</h1>
+        <button class="pl-40 mr-30" @click=" $store.globalState.open = ! open">
+            <img class="icon" src="./icon/icons8-cancel.svg" width="20px" height="20px" alt="xmark">
+        </button>
+    </div>
+    <ul>
+        <li x-data="{ open: false, toggle() { this.open = !this.open } }">
+            <button @click="toggle()" class="none"><h2>IT та програмування</h2></button>
+            <div x-show="open">
+                <DropInfo />
+            </div>
+        </li>
+        <li x-data="{ openTwo: false, toggle() { this.openTwo = !this.openTwo } }">
+            <button @click="toggle()" class="none"><h2>Інфа про життя та вобще хто я такий</h2></button>
+            <div x-show="openTwo">
+                <DropInfoMe />
+            </div>
+        </li>
+    </ul>
+</div>
 
-<h1>Про мене</h1>
-<ul>
-    <li x-data="{ open: false, toggle() { this.open = ! this.open } }">
-        <button @click="toggle()" class="none"><h2>IT та програмування</h2></button>
-        <div x-show="open">
-            <DropInfo />
-        </div>
-    </li>
-    <li>
-        <h2>Інфа про життя та вобще хто я такий</h2>
-    </li>
-</ul>
 <style>
-    .none{
-        background:none; border:none; 
-    }
-</style>
+  
