@@ -916,7 +916,7 @@
 
 "@types/alpinejs@^3.13.10":
   version "3.13.10"
-  resolved "https://registry.yarnpkg.com/@types/alpinejs/-/alpinejs-3.13.10.tgz#437c96c7e21fed88a60da9648fb87007c17304d8"
+  resolved "https://registry.npmjs.org/@types/alpinejs/-/alpinejs-3.13.10.tgz"
   integrity sha512-ah53tF6mWuuwerpDE7EHwbZErNDJQlsLISPqJhYj2RZ9nuTYbRknSkqebUd3igkhLIZKkPa7IiXjSn9qsU9O2w==
 
 "@types/babel__core@^7.20.5":
@@ -1179,7 +1179,7 @@ ajv@^8.11.0:
 
 alpinejs@^3.14.1:
   version "3.14.1"
-  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.14.1.tgz#549e056c3b75e57c0f23076a13cde09da684ba0a"
+  resolved "https://registry.npmjs.org/alpinejs/-/alpinejs-3.14.1.tgz"
   integrity sha512-ICar8UsnRZAYvv/fCNfNeKMXNoXGUfwHrjx7LqXd08zIP95G2d9bAOuaL97re+1mgt/HojqHsfdOLo/A5LuWgQ==
   dependencies:
     "@vue/reactivity" "~3.1.1"
@@ -1232,11 +1232,6 @@ anymatch@~3.1.2:
   dependencies:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
-
-appwrite@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.npmjs.org/appwrite/-/appwrite-15.0.0.tgz"
-  integrity sha512-rzmo+87tizYLs3YnRLets+vMUF85S/OHkgiGgp0UKcKJj0U1RktAsuIecFqRROKfkqs0fKzggRAIs3RCoYQQwA==
 
 arg@^5.0.2:
   version "5.0.2"
