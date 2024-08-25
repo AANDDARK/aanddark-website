@@ -7,7 +7,7 @@ import InfoCard from '@/components/infoCard.astro';
 <head>
   <meta charset="utf-8" />
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-  <script defer src="./public/scripts/globalState.js"></script> 
+  <script defer src="/scripts/globalState.js"></script> 
 </head>
 <body>
   <video autoplay muted loop id="myVideo">
@@ -21,7 +21,7 @@ import InfoCard from '@/components/infoCard.astro';
       </button>
     </div>
 
-    <div class="fixed inset-0 flex items-center justify-center z-10" x-show="$store.globalState.open">
+    <div class="info-card shadow-2xl" x-show="$store.globalState.open">
         <InfoCard />
     </div>
   </div>
@@ -35,5 +35,17 @@ import InfoCard from '@/components/infoCard.astro';
       min-height: 100%;
       z-index: -1; 
     }
+    .info-card {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); 
+    align-items: center;
+    justify-content: center;
+    z-index: 20; 
+    overflow: auto; 
+  }
   </style>
 </body>
