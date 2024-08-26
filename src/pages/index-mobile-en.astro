@@ -1,5 +1,6 @@
 ---
-import InfoCardMobile from "@/components/infoCardMobile.astro";
+
+import InfoCardMobileEn from '@/components/infoCardMobile-en.astro'
 import '@/styles/globals.css'
 ---
 
@@ -8,6 +9,7 @@ import '@/styles/globals.css'
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script defer src="./scripts/globalState.js"></script> 
 </head>
+<body>
   <div x-data="$store.globalState">
     <img id="mobilePhoto" src="./mobile.jpg" alt="" srcset="">
     <div>
@@ -18,11 +20,11 @@ import '@/styles/globals.css'
       </div>
       
       <div class="info-card" x-show="$store.globalState.open">
-        <InfoCardMobile />
+        <InfoCardMobileEn />
     </div>
     </div>
   </div>
-
+</body>
 <style>
   #mobilePhoto {
   position: absolute;
@@ -47,7 +49,5 @@ import '@/styles/globals.css'
   overflow: auto; 
 }
 
-.dropdown:hover .dropdown-menu {
-            display: contents;
-        }
+
 </style>
