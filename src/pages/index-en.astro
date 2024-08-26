@@ -1,6 +1,7 @@
 ---
+import InfoCardEn from '@/components/infoCard-en.astro';
 import '@/styles/globals.css';
-import InfoCard from '@/components/infoCard.astro';
+
 ---
 
 <head>
@@ -50,7 +51,7 @@ import InfoCard from '@/components/infoCard.astro';
     </div>
 
     <div class="info-card shadow-2xl" x-show="$store.globalState.open">
-        <InfoCard />
+        <InfoCardEn />
     </div>
    
   </div>

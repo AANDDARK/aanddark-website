@@ -1,0 +1,27 @@
+---
+import AngularEn from "./subinfo/angular-en.astro";
+import OtherEn from "./subinfo/other-en.astro";
+import ReactEn from "./subinfo/react-en.astro";
+import VueEn from "./subinfo/vue-en.astro";
+
+
+---
+
+<ul>
+    <li x-data="{ openR: false, toggle() { this.openR = ! this.openR } }" >
+        <button @click="toggle()"><h1 class="font-medium">React</h1></button>
+        <div x-show="openR"><ReactEn /></div>
+    </li>
+    <li x-data="{openV: false, clickV() {this.openV = ! this.openV} }">
+        <button @click="clickV()"><h1 class="font-medium">Vue</h1></button>
+        <div x-show="openV"><VueEn /></div>
+    </li>
+    <li x-data="{openA: false, clickA(){this.openA = ! this.openA}}">
+        <button @click="clickA()"><h1 class="font-medium">Angular</h1></button>
+        <div x-show="openA"><AngularEn/></div>
+    </li>
+    <li x-data="{openO: false, clickO(){this.openO = ! this.openO}}">
+        <button @click="clickO"><h1 class="font-medium">Інші технології</h1></button>
+        <div x-show="openO"><OtherEn /></div>
+    </li>
+</ul>
