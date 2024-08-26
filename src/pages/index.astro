@@ -1,6 +1,7 @@
 ---
 import '@/styles/globals.css';
 import InfoCard from '@/components/infoCard.astro';
+
 ---
 
 <head>
@@ -8,6 +9,7 @@ import InfoCard from '@/components/infoCard.astro';
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="./scripts/globalState.js"></script> 
   <link rel="stylesheet" href="@/styles/globals.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <header>
@@ -83,3 +85,27 @@ overflow: hidden;
             display: block;
         }
 </style>
+<script>
+   function redirectBasedOnScreenSize() {
+      // Розміри для мобільної версії
+      const mobileWidth = 750;
+      const mobileHeight = 700;
+      
+      // Отримання ширини та висоти вікна
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      // Перенаправлення
+      if (width <= mobileWidth && height <= mobileHeight) {
+        window.location.href = '/index-mobile'; 
+      } else {
+        window.location.href = '/'; 
+      }
+    }
+
+     
+    window.addEventListener('load', redirectBasedOnScreenSize);
+
+   
+    window.addEventListener('resize', redirectBasedOnScreenSize);
+</script>
