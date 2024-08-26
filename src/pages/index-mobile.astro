@@ -1,0 +1,51 @@
+---
+import InfoCardMobile from "@/components/infoCardMobile.astro";
+---
+
+<head>
+  <meta charset="utf-8" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="./scripts/globalState.js"></script> 
+</head>
+<body>
+  <div x-data="$store.globalState">
+    <img id="mobilePhoto" src="./mobile.jpg" alt="" srcset="">
+    <div>
+      <div class="flex items-center justify-center min-h-screen">
+        <button @click="$store.globalState.open = !$store.globalState.open" class="bg-gray-950 text-zinc-300 font-bold py-2 px-6 text-2xl  w-64 h-24 rounded">
+          info
+        </button>
+      </div>
+      
+      <div class="info-card" x-show="$store.globalState.open">
+        <InfoCardMobile />
+    </div>
+    </div>
+  </div>
+</body>
+<style>
+  #mobilePhoto {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; 
+}
+
+.info-card {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20; 
+  overflow: auto; 
+}
+
+
+</style>
