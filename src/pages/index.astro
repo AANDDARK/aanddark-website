@@ -86,25 +86,35 @@ overflow: hidden;
         }
 </style>
 <script>
-   function redirectBasedOnScreenSize() {
+ function redirectBasedOnScreenSize() {
+  const mobileWidth = 750;
+  const mobileHeight = 700;
+
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  const currentURL = window.location.pathname;
+
+
+  const redirected = localStorage.getItem('redirected');
+
+  if (redirected) return;
+
+  if (width <= mobileWidth && height <= mobileHeight && !currentURL.includes('/index-mobile')) {
+    localStorage.setItem('redirected', 'true');
+    window.location.href = '/index-mobile';
+  } else if ((width > mobileWidth || height > mobileHeight) && !currentURL.includes('/')) {
+    localStorage.setItem('redirected', 'true');
+    window.location.href = '/';
+  }
+}
+
+window.addEventListener('load', () => {
   
-   const mobileWidth = 750;
-   const mobileHeight = 700;
-   
- 
-   const width = window.innerWidth;
-   const height = window.innerHeight;
+  localStorage.removeItem('redirected');
+  redirectBasedOnScreenSize();
+});
 
- 
-   const currentURL = window.location.href;
+window.addEventListener('resize', redirectBasedOnScreenSize);
 
-   if (width <= mobileWidth && height <= mobileHeight && !currentURL.includes('/index-mobile')) {
-     window.location.href = '/index-mobile'; 
-   } else if (width > mobileWidth || height > mobileHeight && !currentURL.includes('/')) {
-     window.location.href = '/'; 
-   }
- }
-
- window.addEventListener('load', redirectBasedOnScreenSize);
- window.addEventListener('resize', redirectBasedOnScreenSize);
 </script>
