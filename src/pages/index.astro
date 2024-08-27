@@ -87,25 +87,24 @@ overflow: hidden;
 </style>
 <script>
    function redirectBasedOnScreenSize() {
-      // Розміри для мобільної версії
-      const mobileWidth = 750;
-      const mobileHeight = 700;
-      
-      // Отримання ширини та висоти вікна
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-
-      // Перенаправлення
-      if (width <= mobileWidth && height <= mobileHeight) {
-        window.location.href = '/index-mobile'; 
-      } else {
-        window.location.href = '/'; 
-      }
-    }
-
-     
-    window.addEventListener('load', redirectBasedOnScreenSize);
-
+  
+   const mobileWidth = 750;
+   const mobileHeight = 700;
    
-    window.addEventListener('resize', redirectBasedOnScreenSize);
+ 
+   const width = window.innerWidth;
+   const height = window.innerHeight;
+
+ 
+   const currentURL = window.location.href;
+
+   if (width <= mobileWidth && height <= mobileHeight && !currentURL.includes('/index-mobile')) {
+     window.location.href = '/index-mobile'; 
+   } else if (width > mobileWidth || height > mobileHeight && !currentURL.includes('/')) {
+     window.location.href = '/'; 
+   }
+ }
+
+ window.addEventListener('load', redirectBasedOnScreenSize);
+ window.addEventListener('resize', redirectBasedOnScreenSize);
 </script>
