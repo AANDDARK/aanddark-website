@@ -1,5 +1,6 @@
 ---
-import InfoCardEn from '@/components/infoCard-en.astro';
+
+import InfoCard from '@/components/infoCard.astro';
 
 ---
 
@@ -7,7 +8,6 @@ import InfoCardEn from '@/components/infoCard-en.astro';
   <meta charset="utf-8" />
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="./scripts/globalState.js"></script> 
-  <link rel="stylesheet" href="@/styles/globals.css">
 </head>
 <body>
   <header>
@@ -44,13 +44,13 @@ import InfoCardEn from '@/components/infoCard-en.astro';
 
   <div x-data="$store.globalState">
     <div class="flex items-center justify-center min-h-screen">
-      <button @click="$store.globalState.open = !$store.globalState.open" class="border-2 bg-gray-950 text-zinc-400 font-bold py-2 px-6 rounded hover:bg-neutral-950 hover:text-indigo-900">
+      <button @click="$store.globalState.open = !$store.globalState.open" class="bg-gray-950 text-zinc-400 font-bold py-2 px-6 rounded hover:bg-neutral-950 hover:text-indigo-900">
         info
       </button>
     </div>
 
     <div class="info-card shadow-2xl" x-show="$store.globalState.open">
-        <InfoCardEn />
+        <InfoCard />
     </div>
    
   </div>
@@ -76,9 +76,7 @@ import InfoCardEn from '@/components/infoCard-en.astro';
   z-index: 20; 
   overflow: auto; 
 }
-body {
-overflow: hidden;
-}
+
 .dropdown:hover .dropdown-menu {
             display: block;
         }
